@@ -1,0 +1,180 @@
+[
+  {
+    "ContainingType": "global_solution.Controllers.AlertasController",
+    "Method": "Get",
+    "RelativePath": "api/Alertas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[global_solution.Application.DTOs.AlertaMeteorologicoDto, global-solution, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "global_solution.Controllers.EstacaoMeteorologicaController",
+    "Method": "GetAll",
+    "RelativePath": "api/EstacaoMeteorologica",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.EstacaoMeteorologicaController",
+    "Method": "Create",
+    "RelativePath": "api/EstacaoMeteorologica",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "global_solution.Application.Dtos.CreateEstacaoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.EstacaoMeteorologicaController",
+    "Method": "GetById",
+    "RelativePath": "api/EstacaoMeteorologica/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.EstacaoMeteorologicaController",
+    "Method": "Update",
+    "RelativePath": "api/EstacaoMeteorologica/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "estacao",
+        "Type": "global_solution.Domain.Entities.EstacaoMeteorologica",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.EstacaoMeteorologicaController",
+    "Method": "Delete",
+    "RelativePath": "api/EstacaoMeteorologica/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.LeituraTemperaturaController",
+    "Method": "GetAll",
+    "RelativePath": "api/LeituraTemperatura",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.LeituraTemperaturaController",
+    "Method": "Create",
+    "RelativePath": "api/LeituraTemperatura",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "global_solution.Application.Dtos.CreateLeituraDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.LeituraTemperaturaController",
+    "Method": "GetById",
+    "RelativePath": "api/LeituraTemperatura/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.LeituraTemperaturaController",
+    "Method": "Update",
+    "RelativePath": "api/LeituraTemperatura/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "leitura",
+        "Type": "global_solution.Domain.Entities.LeituraTemperatura",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "global_solution.Controllers.LeituraTemperaturaController",
+    "Method": "Delete",
+    "RelativePath": "api/LeituraTemperatura/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

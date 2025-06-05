@@ -1,0 +1,33 @@
+﻿@page
+@model global_solution.Pages.CreateEstacaoModel
+@{
+    ViewData["Title"] = "Cadastrar Fazenda para Monitoramento";
+}
+
+<h2 class="mt-4 mb-3">📡 Cadastro de Fazenda para Monitoramento</h2>
+<p class="text-muted mb-4">
+    Preencha os dados abaixo para adicionar uma nova Fazenda de monitoramento climático.
+</p>
+
+<div class="card shadow p-4">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Estacao.Nome" class="form-label">Nome da Estação</label>
+            <input asp-for="Estacao.Nome" class="form-control" placeholder="Ex: Fazenda São João" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Estacao.Localizacao" class="form-label">Localização</label>
+            <input asp-for="Estacao.Localizacao" class="form-control" placeholder="Ex: Zona Rural - MG" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Cadastrar Fazenda</button>
+    </form>
+
+    @if (Model.Sucesso)
+    {
+        <div class="alert alert-success mt-4">
+            Fazenda cadastrada com sucesso!
+        </div>
+    }
+</div>

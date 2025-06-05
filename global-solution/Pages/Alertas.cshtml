@@ -1,0 +1,29 @@
+﻿@page
+@model global_solution.Pages.AlertasModel
+@{
+    ViewData["Title"] = "Alertas Meteorológicos";
+}
+
+<h2>Alertas Meteorológicos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data e Hora</th>
+            <th>Temperatura (°C)</th>
+            <th>Umidade Relativa (%)</th>
+            <th>Condição Extrema</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var alerta in Model.Alertas)
+        {
+            <tr class="@(alerta.CondicaoExtrema != "Normal" ? "table-danger" : "")">
+                <td>@alerta.DataHora.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@alerta.Temperatura</td>
+                <td>@alerta.UmidadeRelativa</td>
+                <td>@alerta.CondicaoExtrema</td>
+            </tr>
+        }
+    </tbody>
+</table>
