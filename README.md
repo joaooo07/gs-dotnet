@@ -1,71 +1,129 @@
-#  Global Solution - Sistema de Gerenciamento de Fornecedores e Vendedores
+#  Global Solution - Estações Meteorológicas com ASP.NET Core
 
-Este projeto é uma solução desenvolvida em .NET com foco na gestão eficiente de fornecedores e vendedores. Ele faz parte de um desafio acadêmico e foi pensado para simular uma aplicação real com boas práticas de arquitetura, organização e versionamento de código.
+Este projeto faz parte da entrega de uma solução .NET para monitoramento de condições climáticas em fazendas, com foco em **temperatura extrema**, **umidade relativa** e **alertas** visuais. Foi desenvolvido utilizando **ASP.NET Core 8**, **Razor Pages** e conexão com **banco de dados Oracle**.
+
+---
 
 ##  Funcionalidades
 
-- Cadastro de fornecedores e vendedores
-- Listagem e edição de dados
-- Validações com DataAnnotations
-- API RESTful documentada com Swagger
-- Uso de padrões como DTOs, Repository e Injeção de Dependência
-- Configuração para banco de dados Oracle
+*  **Cadastro de Estações Meteorológicas**
+*  **Registro de Leituras de Temperatura e Umidade**
+*  **Exibição de Alertas de Condições Extremas**
+*  **Listagem visual com destaque em vermelho para alertas**
+*  **Conectado a banco de dados Oracle**
+*  **APIs REST para integração**
+
+---
 
 ##  Tecnologias Utilizadas
 
-- .NET 8.0 (C#)
-- ASP.NET Core Web API
-- Oracle Database (com string de conexão configurável)
-- Swagger (OpenAPI)
-- Visual Studio 2022
+* **.NET 8.0 (ASP.NET Core MVC + Razor Pages)**
+* **Oracle DB + EF Core**
+* **Swagger (documentação e testes das APIs)**
+* **Visual Studio 2022**
+* **C#**
+* **HTML/CSS para Razor Pages**
 
-##  Como Executar Localmente
+---
 
-1. **Clone o repositório:**
+## Demonstração Visual
 
-   git clone https://github.com/joaooo07/gs-dotnet.git
+A página de Alertas exibe uma tabela com os dados meteorológicos e **destaque em vermelho** para condições como "CalorExtremo":
 
 
-2. **Abra o projeto no Visual Studio 2022.**
+Estação: Fazenda01
+Temperatura: 39°C
+Umidade: 74%
+Condição: CalorExtremo 
 
-3. **Configure a string de conexão no `appsettings.json` com seu ambiente Oracle.**
 
-4. **Execute o projeto (F5) ou via terminal:**
-   dotnet run
+---
 
-5. **Acesse a documentação da API:**
-   https://localhost:{porta}/swagger
+##  Como Executar o Projeto
 
-##  Testes
+### Pré-requisitos
 
-Você pode testar os endpoints diretamente pelo Swagger ou utilizar ferramentas como Postman e Insomnia.
+* .NET 8 SDK
+* Oracle Database configurado com as tabelas corretas
+* Visual Studio 2022
+
+### 1. Clone o repositório
+
+
+git clone https://github.com/SEU_USUARIO/gs-dotnet.git
+cd gs-dotnet/global-solution
+
+
+### 2. Configure o banco de dados
+
+No arquivo `appsettings.Development.json`, configure a string de conexão com seu banco Oracle:
+
+
+"ConnectionStrings": {
+  "OracleConnection": "User Id=USUARIO;Password=SENHA;Data Source=//localhost:1521/XEPDB1"
+}
+
+
+### 3. Execute o projeto
+
+Abra o Visual Studio e pressione `F5` ou rode via terminal:
+
+
+dotnet run
+
+
+
+## Endpoints Principais (via Swagger)
+
+Após executar, acesse: [http://localhost:5164/swagger/index.html](http://localhost:5164/swagger/index.html)
+
+* `GET /api/alertas`
+* `POST /api/leituras`
+* `POST /api/estacoes`
+
+
 
 ##  Estrutura do Projeto
 
 
 global-solution/
+│
 ├── Controllers/
-├── DTOs/
-├── Models/
-├── Repositories/
-├── Services/
-├── appsettings.json
-└── Program.cs
+│   ├── AlertasController.cs
+│   ├── EstacaoMeteorologicaController.cs
+│   └── LeituraTemperaturaController.cs
+│
+├── Application/
+│   ├── Dtos/
+│   ├── Interfaces/
+│   └── Services/
+│
+├── Domain/Entities/
+├── Data/AppDbContext.cs
+├── Migrations/
+├── Pages/ (Razor Pages)
+├── Program.cs
+└── appsettings.json
 
 
-##  Observações
 
-* O projeto está funcional e pronto para testes com banco de dados.
-* O Oracle é essencial para a execução completa do sistema — mantenha-o disponível.
 
-##  Sobre
+## Testes Locais
 
-Este projeto foi desenvolvido como parte da disciplina de desenvolvimento de software. Além de exercitar práticas de arquitetura backend, ele também integra conceitos de versionamento com Git e publicação no GitHub.
+Você pode testar os endpoints usando o Swagger ou ferramentas como **Postman**. Dados de exemplo:
 
----
 
- **Desenvolvedor:** João Motta
- [GitHub](https://github.com/joaooo07)
+{
+  "estacaoNome": "Fazenda01",
+  "dataHora": "2025-06-05T11:38:47",
+  "temperatura": 39,
+  "umidadeRelativa": 74
+}
 
-```
+
+
+
+##  Licença
+
+Este projeto foi desenvolvido com fins educacionais e para submissão no contexto do **Global Solution FIAP**.
 
