@@ -50,7 +50,7 @@ Condição: CalorExtremo
 ### 1. Clone o repositório
 
 
-git clone https://github.com/SEU_USUARIO/gs-dotnet.git
+git clone https://github.com/joaooo07/gs-dotnet.git
 cd gs-dotnet/global-solution
 
 
