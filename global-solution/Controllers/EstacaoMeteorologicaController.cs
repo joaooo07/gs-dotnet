@@ -15,12 +15,12 @@ namespace global_solution.Controllers
         {
             _service = service;
         }
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var estacoes = _service.GetAll();
-            return Ok(estacoes);
-        }
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    var estacoes = _service.GetAll();
+        //    return Ok(estacoes);
+        //}
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -47,19 +47,19 @@ namespace global_solution.Controllers
             return CreatedAtAction(nameof(GetById), new { id = estacao.Id }, estacao);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] EstacaoMeteorologica estacao)
-        {
-            if (estacao == null || estacao.Id != id)
-                return BadRequest();
+        //[HttpPut("{id}")]
+        //public IActionResult Update(int id, [FromBody] EstacaoMeteorologica estacao)
+        //{
+        //    if (estacao == null || estacao.Id != id)
+        //        return BadRequest();
 
-            var existente = _service.GetById(id);
-            if (existente == null)
-                return NotFound();
+        //    var existente = _service.GetById(id);
+        //    if (existente == null)
+        //        return NotFound();
 
-            _service.Update(estacao);
-            return NoContent();
-        }
+        //    _service.Update(estacao);
+        //    return NoContent();
+        //}
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

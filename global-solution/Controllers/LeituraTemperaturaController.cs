@@ -16,23 +16,34 @@ namespace global_solution.Controllers
             _service = service;
         }
 
-        // GET: api/LeituraTemperatura
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var leituras = _service.GetAll();
-            return Ok(leituras);
-        }
+        //// GET: api/LeituraTemperatura
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    var leituras = _service.GetAll();
+        //    return Ok(leituras);
+        //}
 
-        // GET: api/LeituraTemperatura/5
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var leitura = _service.GetById(id);
             if (leitura == null)
                 return NotFound();
-            return Ok(leitura);
+
+            var leituraDto = new LeituraTemperaturaDto
+            {
+                Id = leitura.Id,
+                EstacaoId = leitura.EstacaoId,
+                DataHora = leitura.DataHora,
+                Temperatura = leitura.Temperatura,
+                UmidadeRelativa = leitura.UmidadeRelativa,
+                CondicaoExtrema = leitura.CondicaoExtrema
+            };
+
+            return Ok(leituraDto);
         }
+
 
         // POST: api/LeituraTemperatura
         [HttpPost]
@@ -55,19 +66,20 @@ namespace global_solution.Controllers
         }
 
         // PUT: api/LeituraTemperatura/5
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] LeituraTemperatura leitura)
-        {
-            if (leitura == null || leitura.Id != id)
-                return BadRequest();
+        //[HttpPut("{id}")]
+        //public IActionResult Update(int id, [FromBody] LeituraTemperatura leitura)
+        //{
+        //    if (leitura == null || leitura.Id != id)
+        //        return BadRequest();
 
-            var existente = _service.GetById(id);
-            if (existente == null)
-                return NotFound();
+        //    var existente = _service.GetById(id);
+        //    if (existente == null)
+        //        return NotFound();
 
-            _service.Update(leitura);
-            return NoContent();
-        }
+        //    _service.Update(leitura);
+        //    return NoContent();
+        //}
+
 
         // DELETE: api/LeituraTemperatura/5
         [HttpDelete("{id}")]

@@ -11,14 +11,18 @@
 
 <div class="card shadow p-4">
     <form method="post">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
         <div class="mb-3">
             <label asp-for="Estacao.Nome" class="form-label">Nome da Estação</label>
             <input asp-for="Estacao.Nome" class="form-control" placeholder="Ex: Fazenda São João" />
+            <span asp-validation-for="Estacao.Nome" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Estacao.Localizacao" class="form-label">Localização</label>
             <input asp-for="Estacao.Localizacao" class="form-control" placeholder="Ex: Zona Rural - MG" />
+            <span asp-validation-for="Estacao.Localizacao" class="text-danger"></span>
         </div>
 
         <button type="submit" class="btn btn-success">Cadastrar Fazenda</button>
@@ -31,3 +35,7 @@
         </div>
     }
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
